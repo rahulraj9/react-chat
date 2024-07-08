@@ -1,46 +1,8 @@
 [
-    {
-        "id": 1,
-        "name": "Alice"
-    },
-    {
-        "id": 2,
-        "name": "Bob"
-    },
-    {
-        "id": 3,
-        "name": "Charlie"
-    },
-    {
-        "id": "3",
-        "contactName": "Charlie"
-    },
-    {
-        "id": "4",
-        "contactName": "David"
-    },
-    {
-        "id": "5",
-        "contactName": "Eve"
-    },
-    {
-        "id": "6",
-        "contactName": "Frank"
-    },
-    {
-        "id": "7",
-        "contactName": "Grace"
-    },
-    {
-        "id": "8",
-        "contactName": "Hannah"
-    },
-    {
-        "id": "9",
-        "contactName": "Ian"
-    },
-    {
-        "id": "10",
-        "contactName": "Jessica"
-    }
+    { "id": 1, "name": "Alice" },
+    { "id": 2, "name": "Bob" },
+    { "id": 3, "name": "Charlie" },
+    { "id": 122, "name": "Raj" },
+    { "id": 562, "name": "David" },
+    { "id": 339, "name": "David" }
 ]

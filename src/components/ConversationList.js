@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { truncateMessage } from '../utils/truncate';
 
 const ConversationList = ({ onCreateConversation }) => {
   const conversations = useSelector(state => state.conversations.conversations || []);
+  const messages = useSelector(state => state.messages.messages || {});
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredConversations, setFilteredConversations] = useState(conversations);
 
@@ -16,7 +18,7 @@ const ConversationList = ({ onCreateConversation }) => {
   }, [searchTerm, conversations]);
 
   return (
-    <div className="conversation-list">
+    <div className="sidebar">
       <div className="search-bar">
         <input
           type="text"
@@ -26,15 +28,19 @@ const ConversationList = ({ onCreateConversation }) => {
         />
       </div>
       <button onClick={onCreateConversation}>Create Conversation</button>
-      <div className="conversations">
-        {filteredConversations.map(conv => (
-          <Link to={`/chat/${conv.id}`} key={conv.id}>
-            <div className="conversation-item">
-              <div className="contact-name">{conv.contactName}</div>
-              <div className="last-message">{conv.lastMessage}</div>
-            </div>
-          </Link>
-        ))}
+      <div className="conversation-list">
+        {filteredConversations.map(conv => {
+          const lastMessage = messages[conv.id]?.slice(-1)[0]?.text || "No messages yet";
+          const truncatedLastMessage = truncateMessage(lastMessage, 5); // Adjust word limit as needed
+          return (
+            <Link to={`/chat/${conv.id}`} key={conv.id}>
+              <div className="conversation-item">
+                <div className="contact-name">{conv.contactName}</div>
+                <div className="last-message">{truncatedLastMessage}</div>
+              </div>
+            </Link>
+          );
+        })}
       </div>
     </div>
   );

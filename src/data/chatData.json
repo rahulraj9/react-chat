@@ -1,25 +1,27 @@
 {
-    "conversations": [
-      {
-        "id": "1",
-        "contactName": "Alice",
-        "lastMessage": "See you tomorrow!"
-      },
-      {
-        "id": "2",
-        "contactName": "Bob",
-        "lastMessage": "How are you?"
-      }
-    ],
-    "messages": {
-      "1": [
-        { "text": "Hey Alice!", "sender": "me", "timestamp": "2024-07-01T12:34:56Z" },
-        { "text": "See you tomorrow!", "sender": "Alice", "timestamp": "2024-07-01T12:35:56Z" }
-      ],
-      "2": [
-        { "text": "Hi Bob!", "sender": "me", "timestamp": "2024-07-01T12:36:56Z" },
-        { "text": "How are you?", "sender": "Bob", "timestamp": "2024-07-01T12:37:56Z" }
-      ]
+  "conversations": [
+    {
+      "id": "1",
+      "type": "individual",
+      "contactName": "Alice",
+      "participants": ["user", "Alice"]
+    },
+    {
+      "id": "2",
+      "type": "group",
+      "contactName": "Project Team",
+      "participants": ["user", "Bob", "Charlie", "Dave"]
     }
+  ],
+  "messages": {
+    "1": [
+      { "text": "Hi Alice!", "sender": "user", "timestamp": "2024-07-01T12:00:00Z" },
+      { "text": "Hello!", "sender": "Alice", "timestamp": "2024-07-01T12:01:00Z" }
+    ],
+    "2": [
+      { "text": "Project meeting at 3 PM.", "sender": "user", "timestamp": "2024-07-01T09:00:00Z" },
+      { "text": "I'll be there.", "sender": "Bob", "timestamp": "2024-07-01T09:05:00Z" },
+      { "text": "Me too.", "sender": "Charlie", "timestamp": "2024-07-01T09:10:00Z" }
+    ]
   }
-  
+}

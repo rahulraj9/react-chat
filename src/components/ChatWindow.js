@@ -18,8 +18,8 @@ const ChatWindow = ({ conversationId }) => {
     <div className="chat-window">
       <div className="messages">
         {messages.map((msg, index) => (
-          <div className="message" key={index}>
-            <span>{msg.sender}: </span>{msg.text}
+          <div key={index} className={`message ${msg.sender === 'me' ? 'mine' : 'sender'}`}>
+            <span>{msg.text}</span>
           </div>
         ))}
       </div>

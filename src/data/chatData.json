@@ -1,0 +1,25 @@
+{
+    "conversations": [
+      {
+        "id": "1",
+        "contactName": "Alice",
+        "lastMessage": "See you tomorrow!"
+      },
+      {
+        "id": "2",
+        "contactName": "Bob",
+        "lastMessage": "How are you?"
+      }
+    ],
+    "messages": {
+      "1": [
+        { "text": "Hey Alice!", "sender": "me", "timestamp": "2024-07-01T12:34:56Z" },
+        { "text": "See you tomorrow!", "sender": "Alice", "timestamp": "2024-07-01T12:35:56Z" }
+      ],
+      "2": [
+        { "text": "Hi Bob!", "sender": "me", "timestamp": "2024-07-01T12:36:56Z" },
+        { "text": "How are you?", "sender": "Bob", "timestamp": "2024-07-01T12:37:56Z" }
+      ]
+    }
+  }
+  

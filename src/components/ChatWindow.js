@@ -6,12 +6,24 @@ const ChatWindow = ({ conversationId }) => {
   const dispatch = useDispatch();
   const messages = useSelector(state => state.messages.messages[conversationId] || []);
   const [newMessage, setNewMessage] = useState('');
+  const [file, setFile] = useState(null);
 
   const handleSendMessage = () => {
-    if (newMessage.trim() !== '') {
-      dispatch(addMessage({ conversationId, message: { text: newMessage, sender: 'me', timestamp: new Date().toISOString() } }));
+    if (newMessage.trim() !== '' || file) {
+      const message = {
+        text: newMessage,
+        sender: 'me',
+        timestamp: new Date().toISOString(),
+        file: file ? URL.createObjectURL(file) : null
+      };
+      dispatch(addMessage({ conversationId, message }));
       setNewMessage('');
+      setFile(null);
     }
+  };
+
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
   };
 
   return (
@@ -19,7 +31,8 @@ const ChatWindow = ({ conversationId }) => {
       <div className="messages">
         {messages.map((msg, index) => (
           <div key={index} className={`message ${msg.sender === 'me' ? 'mine' : 'sender'}`}>
-            <span>{msg.text}</span>
+            {msg.text && <span>{msg.text}</span>}
+            {msg.file && <img src={msg.file} alt="Sent media" className="chat-media" />}
           </div>
         ))}
       </div>
@@ -30,8 +43,15 @@ const ChatWindow = ({ conversationId }) => {
           onChange={e => setNewMessage(e.target.value)}
           placeholder="Type your message..."
         />
+        <label htmlFor="file-upload">Attach file</label>
+        <input
+          id="file-upload"
+          type="file"
+          onChange={handleFileChange}
+        />
         <button onClick={handleSendMessage}>Send</button>
       </div>
+      {file && <div className="file-preview">{file.name}</div>}
     </div>
   );
 };

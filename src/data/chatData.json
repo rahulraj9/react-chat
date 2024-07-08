@@ -2,26 +2,96 @@
   "conversations": [
     {
       "id": "1",
-      "type": "individual",
       "contactName": "Alice",
-      "participants": ["user", "Alice"]
+      "lastMessage": "See you tomorrow!"
     },
     {
       "id": "2",
-      "type": "group",
-      "contactName": "Project Team",
-      "participants": ["user", "Bob", "Charlie", "Dave"]
+      "contactName": "Bob",
+      "lastMessage": "How are you?"
+    },
+    {
+      "id": "3",
+      "contactName": "Charlie",
+      "lastMessage": "Got the files, thanks!"
+    },
+    {
+      "id": "4",
+      "contactName": "David",
+      "lastMessage": "Sure, let's meet at 5."
+    },
+    {
+      "id": "5",
+      "contactName": "Eve",
+      "lastMessage": "What's for dinner tonight?"
+    },
+    {
+      "id": "6",
+      "contactName": "Frank",
+      "lastMessage": "Can you help with the presentation?"
+    },
+    {
+      "id": "7",
+      "contactName": "Grace",
+      "lastMessage": "I'll be there by 9."
+    },
+    {
+      "id": "8",
+      "contactName": "Hannah",
+      "lastMessage": "Just finished reading that book."
+    },
+    {
+      "id": "9",
+      "contactName": "Ian",
+      "lastMessage": "How was your trip?"
+    },
+    {
+      "id": "10",
+      "contactName": "Jessica",
+      "lastMessage": "See you at the party!"
     }
   ],
   "messages": {
     "1": [
-      { "text": "Hi Alice!", "sender": "user", "timestamp": "2024-07-01T12:00:00Z" },
-      { "text": "Hello!", "sender": "Alice", "timestamp": "2024-07-01T12:01:00Z" }
+      { "text": "Hey Alice!", "sender": "me", "timestamp": "2024-07-01T12:34:56Z" },
+      { "text": "See you tomorrow!", "sender": "Alice", "timestamp": "2024-07-01T12:35:56Z" }
     ],
     "2": [
-      { "text": "Project meeting at 3 PM.", "sender": "user", "timestamp": "2024-07-01T09:00:00Z" },
-      { "text": "I'll be there.", "sender": "Bob", "timestamp": "2024-07-01T09:05:00Z" },
-      { "text": "Me too.", "sender": "Charlie", "timestamp": "2024-07-01T09:10:00Z" }
+      { "text": "Hi Bob!", "sender": "me", "timestamp": "2024-07-01T12:36:56Z" },
+      { "text": "How are you?", "sender": "Bob", "timestamp": "2024-07-01T12:37:56Z" },
+      { "text": "I'm good, thanks!", "sender": "me", "timestamp": "2024-07-01T12:38:56Z" }
+    ],
+    "3": [
+      { "text": "Hey Charlie, I've sent you the files.", "sender": "me", "timestamp": "2024-07-01T12:39:56Z" },
+      { "text": "Got the files, thanks!", "sender": "Charlie", "timestamp": "2024-07-01T12:40:56Z" }
+    ],
+    "4": [
+      { "text": "Are we still meeting at 5?", "sender": "David", "timestamp": "2024-07-01T12:41:56Z" },
+      { "text": "Sure, let's meet at 5.", "sender": "me", "timestamp": "2024-07-01T12:42:56Z" }
+    ],
+    "5": [
+      { "text": "Hey Eve, I'm thinking pasta.", "sender": "me", "timestamp": "2024-07-01T12:43:56Z" },
+      { "text": "Sounds good!", "sender": "Eve", "timestamp": "2024-07-01T12:44:56Z" }
+    ],
+    "6": [
+      { "text": "Frank, what do you need help with?", "sender": "me", "timestamp": "2024-07-01T12:45:56Z" },
+      { "text": "Can you review the slides for the presentation?", "sender": "Frank", "timestamp": "2024-07-01T12:46:56Z" }
+    ],
+    "7": [
+      { "text": "What time will you be here?", "sender": "me", "timestamp": "2024-07-01T12:47:56Z" },
+      { "text": "I'll be there by 9.", "sender": "Grace", "timestamp": "2024-07-01T12:48:56Z" }
+    ],
+    "8": [
+      { "text": "Just finished reading that book.", "sender": "Hannah", "timestamp": "2024-07-01T12:49:56Z" },
+      { "text": "How did you like it?", "sender": "me", "timestamp": "2024-07-01T12:50:56Z" }
+    ],
+    "9": [
+      { "text": "It was great! How was your trip?", "sender": "Ian", "timestamp": "2024-07-01T12:51:56Z" },
+      { "text": "It was relaxing, thanks!", "sender": "me", "timestamp": "2024-07-01T12:52:56Z" }
+    ],
+    "10": [
+      { "text": "See you at the party!", "sender": "Jessica", "timestamp": "2024-07-01T12:53:56Z" },
+      { "text": "Looking forward to it!", "sender": "me", "timestamp": "2024-07-01T12:54:56Z" }
     ]
   }
 }

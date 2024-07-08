@@ -30,8 +30,9 @@ const ConversationList = ({ onCreateConversation }) => {
       <button onClick={onCreateConversation}>Create Conversation</button>
       <div className="conversation-list">
         {filteredConversations.map(conv => {
-          const lastMessage = messages[conv.id]?.slice(-1)[0]?.text || "No messages yet";
-          const truncatedLastMessage = truncateMessage(lastMessage, 5); // Adjust word limit as needed
+          const lastMessageObj = messages[conv.id]?.slice(-1)[0];
+          const lastMessageText = lastMessageObj?.text || (lastMessageObj?.file ? 'Image' : 'No messages yet');
+          const truncatedLastMessage = truncateMessage(lastMessageText, 5); // Adjust word limit as needed
           return (
             <Link to={`/chat/${conv.id}`} key={conv.id}>
               <div className="conversation-item">

@@ -10,12 +10,12 @@ const CreateConversationPopup = ({ onClose }) => {
   const [availableContacts, setAvailableContacts] = useState([]);
 
   useEffect(() => {
-    const usedContacts = conversations.map(conv => conv.contactId);
+    const usedContacts = conversations.map(conv => conv.id);
     setAvailableContacts(contacts.filter(contact => !usedContacts.includes(contact.id)));
   }, [conversations]);
 
   const handleStartConversation = (contact) => {
-    dispatch(addConversation({ id: Date.now(), contactId: contact.id, contactName: contact.name, lastMessage: '' }));
+    dispatch(addConversation({id: contact.id, contactName: contact.name, lastMessage: '' }));
     onClose();
   };
 
